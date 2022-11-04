@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>End Screen</title>
+</head>
+<body class="end" onload="newQuote()">
+
+    <div class="text">Hey <span id="comp_text"> </span>, don't give up keep trying!</div>
+    
+    <div id="end_score" class="display_score">
+        <h2>Score :</h2>
+        <h1 class="scoree" id="score" style="color:#EF3837">00</h1>
+    </div>
+
+    <div id="quote">
+    </div>
+
+    <div>
+        <span id="newbut" class='start-btn' onclick="location.href = './index.html';">RESTART</span>
+    </div>
+
+    <script src="end.js">
+    </script>
+
+    <script>
+        document.getElementById("comp_text").innerHTML = JSON.parse(localStorage.getItem('nickname'));
+        localStorage.removeItem('nickname');
+        localStorage.removeItem('username');
+        localStorage.removeItem('endScore');
+    </script>
+
+    <script>
+        var quotes = ["A warrior never gives up.", 
+        "Gamers never stop clicking.", 
+        "Don't lose hope, just keep clicking!", 
+        "Click that restart button and beat that highscore.",
+        "Click Away!",
+        "Can you beat this score?",
+        "Keep calm and click again.",
+        "That score won't get you anywhere, try again!",
+        "Bet that was satisfying but your score isn't, try again soldier!"
+    ]
+
+    function newQuote() {
+        var randomNumber = Math.floor(Math.random()*(quotes.length));
+        document.getElementById('quote').innerHTML = quotes[randomNumber];
+    }
+    </script>
+   
+</body>
+</html>
