@@ -45,6 +45,12 @@
             localStorage.setItem('username', JSON.stringify(old_uName))
             localStorage.setItem('nickname', JSON.stringify(old_nName))
             location.href = './game.html'
+            if (uName=="" || nName==""){
+                alert("Please fill in your details");
+            }
+            else {
+                location.href="./game.html";
+            }
         }
     </script>
 </body>
